@@ -63,6 +63,7 @@
         <script>
             let count = 0;
             let counterElement = document.getElementById('p');
+            let popIndex = 1;
 
             function displayCounter() {
                 counterElement.textContent = count;
@@ -74,9 +75,16 @@
                 console.id ='op';
             }
 
+            function playPopSound() {
+                const audio = new Audio(`pops/pop${popIndex}.mp3`);
+                audio.play();
+                popIndex = popIndex % 4 + 1;
+            }
+
             document.addEventListener('mousedown', function() {
                 counterElement.style.backgroundImage = 'url("imgs/op.png")';
                 increment();
+                playPopSound();
             });
 
             document.addEventListener('mouseup', function() {
