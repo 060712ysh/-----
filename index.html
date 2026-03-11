@@ -60,5 +60,28 @@
             <div id="op"></div>
         </div>
 
+        <script>
+            let count = 0;
+            let counterElement = document.getElementById('p');
+
+            function displayCounter() {
+                counterElement.textContent = count;
+            }
+
+            function increment() {
+                count++;
+                counterElement.textContent = count;
+                console.id ='op';
+            }
+
+            document.addEventListener('mousedown', function() {
+                counterElement.style.backgroundImage = 'url("imgs/op.png")';
+                increment();
+            });
+
+            document.addEventListener('mouseup', function() {
+                counterElement.style.backgroundImage = 'url("imgs/p.png")';
+            });
+        </script>
     </body>
 </html>
